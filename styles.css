@@ -857,3 +857,45 @@ footer a { font-weight: var(--fw-semibold); }
   .phone-video video { min-height: 406px; }
   .project-end-cta { margin-top: 30px; }
 }
+
+
+/* v8 — custom-domain media paths + mobile overflow hardening */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+.project-link {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  overflow: hidden;
+}
+
+.project-link > span:first-child {
+  min-width: 0;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.project-link > span:last-child {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 720px) {
+  .project-link {
+    padding-inline: 16px;
+  }
+}
